@@ -1,6 +1,6 @@
-import { AppBar, Box, Grid, List, Typography } from "@mui/material";
-import DemoCard, { Demo } from "../components/ui/DemoCard";
+import { AppBar, Box, Typography } from "@mui/material";
 import { readFileSync } from "fs";
+import DemoCard, { Demo } from "../components/ui/DemoCard";
 
 
 async function getData(): Promise<Demo[]> {
