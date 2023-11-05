@@ -50,10 +50,6 @@ let Ball = function (x, y, mov, gravity, damping, center, keepout) {
 }
 
 const balls = []
-// const width = 800;
-// const height = 800;
-// const width = displayWidth;
-// const height = displayHeight;
 const pointCount = 400;
 const impactInterval = 5;
 const impactAtten = 5;
@@ -66,6 +62,15 @@ let loading = true;
 let music = 'spectrum';
 let bgSync = false;
 let ballSizeSlider;
+
+
+function getCirclePoint(index, totalPoints, radius, center) {
+    const angle = TWO_PI / totalPoints * index;
+    const x = center.x + radius * cos(angle);
+    const y = center.y + radius * sin(angle);
+    return createVector(x, y);
+}
+
 
 function musicSelectEvent() {
     music = musicSelection.value();
@@ -138,6 +143,7 @@ function setup() {
     const anchor = createVector(w / 2, h / 2);
 
     for (let i = 0; i < pointCount; i++) {
+        
         let x = i;
         let y = i;
         switch (i % 4) {
@@ -154,6 +160,7 @@ function setup() {
                 y = 0;
                 break;
         }
+        
         balls.push(
             Ball(x * w / pointCount,
                 y * h / pointCount,
@@ -163,7 +170,19 @@ function setup() {
                 anchor, 
                 100)
         );
+        // const circlePoint = getCirclePoint(i, pointCount, 500, anchor);
+
+        // balls.push(
+        //     Ball(circlePoint.x,
+        //         circlePoint.y,
+        //         createVector(0, 0),
+        //         3,
+        //         0.6,
+        //         anchor, 
+        //         100)
+        // );
     }
+    
 }
 
 function draw() {
