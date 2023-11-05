@@ -50,8 +50,10 @@ let Ball = function (x, y, mov, gravity, damping, center, keepout) {
 }
 
 const balls = []
-const width = 800;
-const height = 800;
+// const width = 800;
+// const height = 800;
+// const width = displayWidth;
+// const height = displayHeight;
 const pointCount = 400;
 const impactInterval = 5;
 const impactAtten = 5;
@@ -76,7 +78,7 @@ function musicSelectEvent() {
         loading = true;
     }
     
-    sound = loadSound(`assets/${music}.mp3`, soundLoaded);  // Load the new sound and set a callback for when it's loaded
+    sound = loadSound(`/audio/${music}.mp3`, soundLoaded);  // Load the new sound and set a callback for when it's loaded
 }
 
 function soundLoaded() {
@@ -92,12 +94,15 @@ function bgSyncCheckedEvent() {
 
 
 function preload() {
-    sound = loadSound(`assets/${music}.mp3`, soundLoaded);
+    sound = loadSound(`/audio/${music}.mp3`, soundLoaded);
 }
 
 
 function setup() {
-    const canvas = createCanvas(width, height);
+    let w = 400;
+    let h = 400;
+
+    const canvas = createCanvas(w, h);
     canvas.parent('p5-container');
 
     startButton = select('#start-button');
@@ -130,7 +135,7 @@ function setup() {
     ballCountToImpact = pointCount / impactInterval;
     stride = Math.floor(spectrum.length / pointCount);
     impactStart = 0;
-    const anchor = createVector(width / 2, height / 2);
+    const anchor = createVector(w / 2, h / 2);
 
     for (let i = 0; i < pointCount; i++) {
         let x = i;
@@ -150,8 +155,8 @@ function setup() {
                 break;
         }
         balls.push(
-            Ball(x * width / pointCount,
-                y * height / pointCount,
+            Ball(x * w / pointCount,
+                y * h / pointCount,
                 createVector((random() - 0.5) * 2, (random() - 0.5) * 2),
                 3,
                 0.6,

@@ -1,0 +1,14 @@
+[
+    {
+        "title":"Dancing Particles",
+        "entryUrl":"/projects/play_music/index.html",
+        "description":"p5.sound의 FFT를 활용, 각 주파수 성분별로 Particle을 할당하여 시각화, 색상은 노란색(저주파) => 하늘색(고주파)로 표현, 가장 익숙한 형태의 음악 시각화를 p5.js 기본 기능만 사용하여 구현",
+        "tags": [""]
+    },
+    {
+        "title":"Dancing Particles",
+        "entryUrl":"/projects/play_music/index.html",
+        "description":"p5.sound의 FFT를 활용, 각 주파수 성분별로 Particle을 할당하여 시각화, 색상은 노란색(저주파) => 하늘색(고주파)로 표현, 가장 익숙한 형태의 음악 시각화를 p5.js 기본 기능만 사용하여 구현",
+        "tags": [""]
+    }
+]
