@@ -119,6 +119,8 @@ function setup() {
     musicSelection.option(music);
     musicSelection.option('dubstep_1');
     musicSelection.option('dubstep_2');
+    musicSelection.option('strobe');
+    musicSelection.option('brazil');
     musicSelection.option('sweep');
     musicSelection.changed(musicSelectEvent);
 
